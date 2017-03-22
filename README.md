@@ -1,0 +1,1 @@
+# macsur-croprotations-cz
