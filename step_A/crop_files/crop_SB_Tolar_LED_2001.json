@@ -1,0 +1,63 @@
+  {
+    "crops": {
+        "WW": {
+            "is-winter-crop": true,
+            "cropParams": {
+                "species": ["include-from-file", "C:/Users/stella/Documents/GitHub/MultiExpCalibrator_parallel/param_files/wheat_CZ.json"],
+                "cultivar": ["include-from-file", "C:/Users/stella/Documents/GitHub/MultiExpCalibrator_parallel/param_files/winter wheat_CZ.json"]
+            },
+            "residueParams": ["include-from-file", "monica-parameters/crop-residues/wheat.json"]
+        },
+        "SB": {
+            "is-winter-crop": false,
+            "cropParams": {
+                "species": ["include-from-file", "C:/Users/stella/Documents/GitHub/MultiExpCalibrator_parallel/param_files/barley_CZ.json"],
+                "cultivar": ["include-from-file", "C:/Users/stella/Documents/GitHub/MultiExpCalibrator_parallel/param_files/spring barley_CZ.json"]
+            },
+            "residueParams": ["include-from-file", "monica-parameters/crop-residues/barley.json"]
+        },
+        "SM": {
+            "is-winter-crop": false,
+            "cropParams": {
+                "species": ["include-from-file", "C:/Users/stella/Documents/GitHub/MultiExpCalibrator_parallel/param_files/maize_CZ.json"],
+                "cultivar": ["include-from-file", "C:/Users/stella/Documents/GitHub/MultiExpCalibrator_parallel/param_files/silage maize_CZ.json"]
+            },
+            "residueParams": ["include-from-file", "monica-parameters/crop-residues/maize.json"]
+        },
+        "WR": {
+            "is-winter-crop": true,
+            "cropParams": {
+                "species": ["include-from-file", "C:/Users/stella/Documents/GitHub/MultiExpCalibrator_parallel/param_files/rape_CZ.json"],
+                "cultivar": ["include-from-file", "C:/Users/stella/Documents/GitHub/MultiExpCalibrator_parallel/param_files/winter rape_CZ.json"]
+            },
+            "residueParams": ["include-from-file", "monica-parameters/crop-residues/rape.json"]
+        }
+    },
+    
+    "fert-params": {
+        "urea": ["include-from-file", "monica-parameters/mineral-fertilisers/U.json"]
+    }, 
+
+    "cropRotation": [
+            {
+                "worksteps": [
+                    { "date": "2000-11-01", "type": "SetValue", "var": ["Mois", [1,4]], "value": 0.244624 },
+                    { "date": "2000-11-01", "type": "SetValue", "var": ["Mois", [5,15]], "value": 0.2555746 },
+                    { "date": "2000-11-01", "type": "SetValue", "var": ["NH4", [1,4]], "value": 0.0225 },
+                    { "date": "2000-11-01", "type": "SetValue", "var": ["NH4", [5,8]], "value": 0.0125 },
+                    { "date": "2001-04-03", "type": "Sowing", "crop": ["ref", "crops", "SB"] },
+                    {
+                        "date": "2001-03-15",
+                        "type": "MineralFertilization",
+                        "amount": [50.0, "kg N"],
+                        "partition": ["ref", "fert-params", "urea"]
+                    },
+                                        { "date": "2001-08-02", "type": "Harvest"}
+                ]
+            }
+        ],
+
+    "CropParameters": {
+        "DEFAULT": ["include-from-file", "monica-parameters/user-parameters/hermes-crop.json"]
+    }
+}

@@ -1,0 +1,89 @@
+{
+  "SiteParameters": {
+    "Latitude": 49.5,
+    "Slope": 0,
+    "HeightNN": [0 , "m"],
+    "NDeposition": 15,
+		
+    "SoilProfileParameters": [
+			{
+				"Thickness": [0.28, "m"],
+				"PermanentWiltingPoint": [0.139, "m3 m-3"],
+				"FieldCapacity": [0.326, "m3 m-3"],
+				"PoreVolume": [0.471, "m3 m-3"],
+				"Clay": [0.21, "% [0-1]"],
+				"Sand": [0.167, "% [0-1]"],
+				"Sceleton": 0,
+				"SoilBulkDensity": [1550, "kg m-3"],
+				"SoilOrganicCarbon": [1.17, "%"],
+				"pH": 6.3,
+				"CN": 11.7
+			},
+			{
+				"Thickness": [0.36, "m"],
+				"PermanentWiltingPoint": [0.159, "m3 m-3"],
+				"FieldCapacity": [0.339, "m3 m-3"],
+				"PoreVolume": [0.463, "m3 m-3"],
+				"Clay": [0.25, "% [0-1]"],
+				"Sand": [0.144, "% [0-1]"],
+				"Sceleton": 0,
+				"SoilBulkDensity": [1550, "kg m-3"],
+				"SoilOrganicCarbon": [0.81, "%"],
+				"pH": 6.6,
+				"CN": 8.1
+			},
+			{
+				"Thickness": [0.3, "m"],
+				"PermanentWiltingPoint": [0.176, "m3 m-3"],
+				"FieldCapacity": [0.351, "m3 m-3"],
+				"PoreVolume": [0.476, "m3 m-3"],
+				"Clay": [0.28, "% [0-1]"],
+				"Sand": [0.136, "% [0-1]"],
+				"Sceleton": 0,
+				"SoilBulkDensity": [1520, "kg m-3"],
+				"SoilOrganicCarbon": [1.01, "%"],
+				"pH": 6.9,
+				"CN": 11.2
+			},
+			{
+				"Thickness": [0.28, "m"],
+				"PermanentWiltingPoint": [0.145, "m3 m-3"],
+				"FieldCapacity": [0.323, "m3 m-3"],
+				"PoreVolume": [0.437, "m3 m-3"],
+				"Clay": [0.23, "% [0-1]"],
+				"Sand": [0.158, "% [0-1]"],
+				"Sceleton": 0,
+				"SoilBulkDensity": [1510, "kg m-3"],
+				"SoilOrganicCarbon": [0.4, "%"],
+				"pH": 6.9,
+				"CN": 6.7
+			},
+			{
+				"Thickness": [0.28, "m"],
+				"PermanentWiltingPoint": [0.124, "m3 m-3"],
+				"FieldCapacity": [0.299, "m3 m-3"],
+				"PoreVolume": [0.407, "m3 m-3"],
+				"Clay": [0.2, "% [0-1]"],
+				"Sand": [0.188, "% [0-1]"],
+				"Sceleton": 0,
+				"SoilBulkDensity": [1570, "kg m-3"],
+				"SoilOrganicCarbon": [0.08, "%"],
+				"pH": 7.2,
+				"CN": 8
+			}
+		]
+  },
+	
+	"SoilTemperatureParameters": ["include-from-file", "monica-parameters/user-parameters/hermes-soil-temperature.json"],
+ 
+	"EnvironmentParameters": {
+    	"DEFAULT": ["include-from-file", "monica-parameters/user-parameters/hermes-environment.json"]
+  	},
+	
+	"SoilOrganicParameters": {
+		"DEFAULT": ["include-from-file", "monica-parameters/user-parameters/hermes-soil-organic.json"]
+	},
+	
+	"SoilTransportParameters": ["include-from-file", "monica-parameters/user-parameters/hermes-soil-transport.json"],
+	"SoilMoistureParameters": ["include-from-file", "monica-parameters/user-parameters/hermes-soil-moisture.json"]
+}
