@@ -77,7 +77,8 @@
 	"SoilTemperatureParameters": ["include-from-file", "monica-parameters/user-parameters/hermes-soil-temperature.json"],
  
 	"EnvironmentParameters": {
-    	"DEFAULT": ["include-from-file", "monica-parameters/user-parameters/hermes-environment.json"]
+    	"DEFAULT": ["include-from-file", "monica-parameters/user-parameters/hermes-environment.json"],
+		"LeachingDepth": 1.5
   	},
 	
 	"SoilOrganicParameters": {
