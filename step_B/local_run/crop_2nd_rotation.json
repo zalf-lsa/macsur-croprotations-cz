@@ -19,7 +19,23 @@
 			"is-winter-crop": true,
 			"cropParams": {
 				"species": ["include-from-file", "monica-parameters/crops/wheat_CZ.json"],
-				"cultivar": ["include-from-file", "monica-parameters/crops/wheat/winter wheat_CZ.json"]
+				"cultivar": { 
+					"=": ["include-from-file", "monica-parameters/crops/wheat/winter wheat_CZ.json"],
+					"OrganIdsForSecondaryYield": [
+							{
+								"organId": 2,
+								"type": "YieldComponent",
+								"yieldDryMatter": 0.86,
+								"yieldPercentage": 0
+							},
+							{
+								"organId": 3,
+								"type": "YieldComponent",
+								"yieldDryMatter": 0.86,
+								"yieldPercentage": 0
+							}
+						]
+					}
 			},
 			"residueParams": ["include-from-file", "monica-parameters/crop-residues/wheat.json"]
 		},
@@ -27,7 +43,23 @@
 			"is-winter-crop": false,
 			"cropParams": {
 				"species": ["include-from-file", "monica-parameters/crops/barley_CZ.json"],
-				"cultivar": ["include-from-file", "monica-parameters/crops/barley/spring barley_CZ.json"]
+				"cultivar": { 
+					"=": ["include-from-file", "monica-parameters/crops/barley/spring barley_CZ.json"],
+					"OrganIdsForSecondaryYield": [
+							{
+								"organId": 2,
+								"type": "YieldComponent",
+								"yieldDryMatter": 0.86,
+								"yieldPercentage": 0
+							},
+							{
+								"organId": 3,
+								"type": "YieldComponent",
+								"yieldDryMatter": 0.86,
+								"yieldPercentage": 0
+							}
+						]
+					}
 			},
 			"residueParams": ["include-from-file", "monica-parameters/crop-residues/barley.json"]
 		},
@@ -88,35 +120,34 @@
 					"base-temp": 0
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 1,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [40, "kg"],
 					"depth": [0.3, "m"]
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 3,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [70, "kg"],
 					"depth": [0.9, "m"]
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 4,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [70, "kg"],
 					"depth": [0.9, "m"]
 				},
 				{ 
-					"type": "AutomaticHarvesting", 
+					"type": "AutomaticHarvest", 
 					"latest-date": "0001-09-05",
 					"min-%-asw": 0,
-					"max-%-asw": 99,
+					"max-%-asw": 100,
 					"max-3d-precip-sum": 2,
 					"max-curr-day-precip": 0.1,
-					"harvest-time": "maturity",
-					"exported": false
+					"harvest-time": "maturity"
 				},
 				{
 					"type": "OrganicFertilization",
@@ -135,6 +166,8 @@
 			]
 		},
 		{
+			"is-cover-crop": true,
+			"can-be-skipped": true,
 			"worksteps": [
 				{ 
 					"type": "AutomaticSowing", 
@@ -151,14 +184,13 @@
 					"base-temp": 0
 				},
 				{ 
-					"type": "AutomaticHarvesting", 
+					"type": "AutomaticHarvest", 
 					"latest-date": "0001-02-10",
 					"min-%-asw": 0,
 					"max-%-asw": 100,
 					"max-3d-precip-sum": 2,
 					"max-curr-day-precip": 0.1,
-					"harvest-time": "maturity",
-					"exported": false
+					"harvest-time": "maturity"
 				},
 				{ 
 					"type": "Tillage",
@@ -185,21 +217,20 @@
 					"base-temp": 0
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 1,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [90, "kg"],
 					"depth": [0.3, "m"]
 				},
 				{ 
-					"type": "AutomaticHarvesting", 
+					"type": "AutomaticHarvest", 
 					"latest-date": "0000-09-07",
 					"min-%-asw": 0,
 					"max-%-asw": 99,
 					"max-3d-precip-sum": 2,
 					"max-curr-day-precip": 0.1,
-					"harvest-time": "maturity",
-					"exported": false
+					"harvest-time": "maturity"
 				},
 				{
 					"type": "OrganicFertilization",
@@ -218,6 +249,8 @@
 			]
 		},
 		{
+			"is-cover-crop": true,
+			"can-be-skipped": true,
 			"worksteps": [
 				{ 
 					"type": "AutomaticSowing", 
@@ -234,14 +267,13 @@
 					"base-temp": 0
 				},
 				{ 
-					"type": "AutomaticHarvesting", 
+					"type": "AutomaticHarvest", 
 					"latest-date": "0001-02-10",
 					"min-%-asw": 0,
 					"max-%-asw": 100,
 					"max-3d-precip-sum": 2,
 					"max-curr-day-precip": 0.1,
-					"harvest-time": "maturity",
-					"exported": false
+					"harvest-time": "maturity"
 				},
 				{ 
 					"type": "Tillage",
@@ -268,28 +300,27 @@
 					"base-temp": 0
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 1,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [100, "kg"],
 					"depth": [0.3, "m"]
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 3,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [100, "kg"],
 					"depth": [0.9, "m"]
 				},
 				{ 
-					"type": "AutomaticHarvesting", 
+					"type": "AutomaticHarvest", 
 					"latest-date": "0000-09-15",
 					"min-%-asw": 0,
 					"max-%-asw": 99,
 					"max-3d-precip-sum": 5,
 					"max-curr-day-precip": 0.5,
-					"harvest-time": "maturity",
-					"exported": false
+					"harvest-time": "maturity"
 				},
 				{ 
 					"type": "Tillage",
@@ -316,35 +347,34 @@
 					"base-temp": 0
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 1,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [40, "kg"],
 					"depth": [0.3, "m"]
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 3,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [70, "kg"],
 					"depth": [0.9, "m"]
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 4,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [70, "kg"],
 					"depth": [0.9, "m"]
 				},
 				{ 
-					"type": "AutomaticHarvesting", 
+					"type": "AutomaticHarvest", 
 					"latest-date": "0001-09-05",
 					"min-%-asw": 0,
 					"max-%-asw": 99,
 					"max-3d-precip-sum": 2,
 					"max-curr-day-precip": 0.1,
-					"harvest-time": "maturity",
-					"exported": false
+					"harvest-time": "maturity"
 				},
 				{
 					"type": "OrganicFertilization",
@@ -379,35 +409,34 @@
 					"base-temp": 0
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 1,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [40, "kg"],
 					"depth": [0.3, "m"]
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"date": "0001-03-01",
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [70, "kg"],
 					"depth": [0.9, "m"]
 				},
 				{
-					"type": "NDemandApplication",
+					"type": "NDemandFertilization",
 					"stage": 3,
 					"partition": ["ref", "fert-params", "urea"],
 					"N-demand": [70, "kg"],
 					"depth": [0.9, "m"]
 				},
 				{ 
-					"type": "AutomaticHarvesting", 
+					"type": "AutomaticHarvest", 
 					"latest-date": "0001-08-22",
 					"min-%-asw": 0,
 					"max-%-asw": 99,
 					"max-3d-precip-sum": 2,
 					"max-curr-day-precip": 0.1,
-					"harvest-time": "maturity",
-					"exported": false
+					"harvest-time": "maturity"
 				},
 				{ 
 					"type": "Tillage",

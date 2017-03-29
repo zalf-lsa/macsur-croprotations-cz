@@ -28,7 +28,7 @@
 
 		"events": [
 			"daily", [
-				"Date", "Crop", "AbBiom", "Yield","LAI", "TraDef", "NDef",
+				"Date", "Crop", "RelDev", "AbBiom", "Yield","LAI", "TraDef", "NDef",
 				"NFert", "PotNup", "ActNup", "NetNmin"
 			],
 
@@ -55,7 +55,7 @@
 	"NumberOfLayers": 20,
 	"LayerThickness": [0.1, "m"],
 
-	"UseSecondaryYields": false,
+	"UseSecondaryYields": true,
 	"NitrogenResponseOn": true,
 	"WaterDeficitResponseOn": true,
 	"EmergenceMoistureControlOn": false,
