@@ -123,7 +123,10 @@
 			"is-winter-crop": true,
 			"cropParams": {
 				"species": ["include-from-file", "monica-parameters/crops/rape_CZ.json"],
-				"cultivar": ["include-from-file", "monica-parameters/crops/rape/winter rape_CZ.json"]
+				"cultivar": { 
+					"=": ["include-from-file", "monica-parameters/crops/rape/winter rape_CZ.json"],
+					"CultivarName": "cover"
+				}
 			},
 			"residueParams": ["include-from-file", "monica-parameters/crop-residues/rape.json"]
 		}
@@ -134,10 +137,10 @@
 		"urea": ["include-from-file", "monica-parameters/mineral-fertilisers/U.json"],
 		"manure": {
             "DEFAULT": ["include-from-file", "monica-parameters/organic-fertilisers/CAM.json"],
-            "AOM_DryMatterContent": 1,
+            "AOM_DryMatterContent": 0.3,
             "CN_Ratio_AOM_Fast": 0,
-            "NConcentration": 0.0051,
-			"AOM_NH4Content": 0.0009,
+            "NConcentration": 0.017,
+			"AOM_NH4Content": 0.003,
 			"PartAOM_to_AOM_Fast": 0.2,
 			"PartAOM_to_AOM_Slow": 0.8
         }
@@ -151,5 +154,10 @@
 				{ "date": "1961-01-01", "type": "SetValue", "var": ["Mois", [1, 10]], "value": ["=", ["Fc", [1, 10]]] }
 			]
 		}
-	]
+	],
+
+	"CropParameters": {
+        "DEFAULT": ["include-from-file", "monica-parameters/user-parameters/hermes-crop.json"],
+		"AdjustRootDepthForSoilProps": false
+    }
   }

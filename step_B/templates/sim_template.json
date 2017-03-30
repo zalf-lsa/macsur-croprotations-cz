@@ -1,11 +1,11 @@
 {
-	"crop.json": "crop_2nd_rotation.json",
-	"site.json": "dom.json",
-	"climate.csv": "DOM-now_01.csv",
+	"crop.json": "",
+	"site.json": "",
+	"climate.csv": "",
 
 	"climate.csv-options": {
 		"start-date": "1961-01-01",
-		"end-date": "2010-12-31",
+		"end-date": "2080-12-31",
 
 		"no-of-climate-file-header-lines": 1,
 		"csv-separator": ",",
@@ -27,28 +27,7 @@
 		},
 
 		"events": [
-			"daily", [
-				"Date", "Crop", "RelDev", "Stage", "AbBiom", "Yield","LAI", "TraDef", "NDef",
-				"NFert", "PotNup", "ActNup", "NetNmin"
-			],
-
-			"crop", [
-				["Year", "LAST"],
-				["Yield", "LAST"],
-				["AbBiom", "LAST"],
-				["Act_ET", "SUM"],
-				["LAI", "MAX"],				
-				["N2O|N2O-crop", "SUM"],
-				["NLeach|NLeach-crop", "SUM"],
-				["SumNUp", "LAST"],
-				["GrainN", "LAST"]				
-			],			
 			
-			"_yearly", [
-				["Year", "LAST"],
-				["N2O|N2O-year", "SUM"],
-				["NLeach|NLeach-year", "SUM"]
-			]
 		]
 	},
 

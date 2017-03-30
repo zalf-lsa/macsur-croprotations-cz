@@ -17,36 +17,36 @@
 # Copyright (C: Leibniz Centre for Agricultural Landscape Research (ZALF)
 
 import time
-import os
-import math
 import json
-import csv
-from StringIO import StringIO
+import copy
 from datetime import date, datetime, timedelta
 from collections import defaultdict
 import sys
 import zmq
 import monica_io
+import rotate_script
 
 USER = "stella"
 LOCAL_RUN = True
 
 PATHS = {
     "stella": {
-        "INCLUDE_FILE_BASE_PATH": "C:/Users/stella/Documents/GitHub",        
+        "INCLUDE_FILE_BASE_PATH": "C:/Users/stella/Documents/GitHub",
+        "LOCAL_ARCHIVE_PATH_TO_PROJECT": "Z:/projects/macsur-croprotations-cz/",
+        "ARCHIVE_PATH_TO_PROJECT": "/archiv-daten/md/projects/macsur-croprotations-cz/"
     },
     "berg": {
         "INCLUDE_FILE_BASE_PATH": "C:/Users/berg.ZALF-AD.000/Documents/GitHub",
+        "LOCAL_ARCHIVE_PATH_TO_PROJECT": "P:/macsur-croprotations-cz/",
+        "ARCHIVE_PATH_TO_PROJECT": "/archiv-daten/md/projects/macsur-croprotations-cz/"
     },
     "berg2": {
         "INCLUDE_FILE_BASE_PATH": "C:/Users/berg.ZALF-AD/GitHub",
-    }    
+        "LOCAL_ARCHIVE_PATH_TO_PROJECT": "P:/macsur-croprotations-cz/",
+        "ARCHIVE_PATH_TO_PROJECT": "/archiv-daten/md/projects/macsur-croprotations-cz/"
+    }
 }
 
-sim_files_path = PATHS[USER]["INCLUDE_FILE_BASE_PATH"] + "/macsur-croprotations-cz/step_A/sim_files/"
-crop_files_path = PATHS[USER]["INCLUDE_FILE_BASE_PATH"] + "/macsur-croprotations-cz/step_A/crop_files/"
-climate_files_path = PATHS[USER]["INCLUDE_FILE_BASE_PATH"] + "/macsur-croprotations-cz/step_A/climate_files/"
-site_files_path = PATHS[USER]["INCLUDE_FILE_BASE_PATH"] + "/macsur-croprotations-cz/step_A/site_files/"
 
 def main():
     "main"
@@ -67,56 +67,124 @@ def main():
     else:
         socket.connect("tcp://cluster2:" + str(config["port"]))
 
-    path_out_stepA = PATHS[USER]["INCLUDE_FILE_BASE_PATH"] + "/macsur-croprotations-cz/step_A/out_stepA.json"
-    with open(path_out_stepA) as _:
-        out_stepA = json.load(_)
+    base_path = PATHS[USER]["INCLUDE_FILE_BASE_PATH"]
+    with open(base_path + "/macsur-croprotations-cz/step_B/templates/out_stepB.json") as _:
+        out_stepB = json.load(_)
 
-    i=1
+    with open(base_path + "/macsur-croprotations-cz/step_B/templates/crop_template.json") as _:
+        crop_template = json.load(_)
+
+    with open(base_path + "/macsur-croprotations-cz/step_B/templates/sim_template.json") as _:
+        sim_template = json.load(_)
+    
+    sites = {}
+    with open(base_path + "/macsur-croprotations-cz/step_B/soils/good_soil.json") as _:
+        sites["good_soil"] = json.load(_)
+    with open(base_path + "/macsur-croprotations-cz/step_B/soils/poor_soil.json") as _:
+        sites["poor_soil"] = json.load(_)
+
+    sim = sim_template
+    sim["output"]["events"] = out_stepB["my_out"]
+
+    #with open("test.json", 'w') as testfile:
+    #    json.dump(sim, testfile)
+
+    stations = ["LED", "VER", "DOM"]
+
+    soils = ["good_soil", "poor_soil"]
+
+    rotations = rotate_script.generate_rotations(PATHS[USER]["INCLUDE_FILE_BASE_PATH"] + "//macsur-croprotations-cz//")
+
+    climate_data = [
+        "naw",
+        "now",
+        "MRI-CGCM3",
+        "IPSL-CM5A-MR",
+        "HADGEM2-ES",
+        "CNRM-CM5",
+        "BNU-ESM"
+    ]
+
+    site_parameters = {
+        "LED": {
+            "Latitude": 48.8,
+            "NDeposition": 33
+        },
+        "VER": {
+            "Latitude": 49.5,
+            "NDeposition": 15
+        },
+        "DOM": {
+            "Latitude": 49.5,
+            "NDeposition": 40
+        }
+    }
+
+    counter=1
     start_store = time.clock()
 
-    for filename in os.listdir(sim_files_path):
-        current_sim = filename[4:]
-        crop_id = current_sim.split("_")[0]
-        location = current_sim.split("_")[2].lower()
+    def generate_and_send_env(station, soil_type, rot_id, climate, realization, counter):
+        
+        def limit_rootdepth():
+            for cultivation_method in env["cropRotation"]:
+                for workstep in cultivation_method["worksteps"]:
+                    if workstep["type"] == "Seed":
+                        current_rootdepth = float(workstep["crop"]["cropParams"]["cultivar"]["CropSpecificMaxRootingDepth"])
+                        workstep["crop"]["cropParams"]["cultivar"]["CropSpecificMaxRootingDepth"] = min(current_rootdepth, 0.8)
+                        break
+                
+        crop = copy.deepcopy(crop_template)
+        crop["cropRotation"] += rotations[rot_id]
+        
+        site = sites[soil_type]
+        site["SiteParameters"]["Latitude"] = site_parameters[station]["Latitude"]
+        site["SiteParameters"]["NDeposition"] = site_parameters[station]["NDeposition"]
 
-        sim_file = sim_files_path + filename
-        crop_file = crop_files_path + "crop_" + current_sim
-        site_file = site_files_path + location + ".json"
-        climate_file = climate_files_path + location + ".csv"
-
-        with open(sim_file) as _:
-            sim = json.load(_)
-            sim["crop.json"] = crop_file #maybe this is not needed (assigned below)
-            sim["site.json"] = site_file #maybe this is not needed (assigned below)
-            sim["climate.csv"] = climate_file
-            sim["include-file-base-path"] = PATHS[USER]["INCLUDE_FILE_BASE_PATH"]
-
-        with open(crop_file) as _:
-            crop = json.load(_)
-
-        with open(site_file) as _:
-            site = json.load(_)
+        #with open("crop_test.json", 'w') as testfile:
+        #    json.dump(crop, testfile)
+        
+        #with open("sim_test.json", 'w') as testfile:
+        #    json.dump(sim, testfile)
+        
+        #with open("site_test.json", 'w') as testfile:
+        #    json.dump(site, testfile)
 
         env = monica_io.create_env_json_from_json_config({
             "crop": crop,
             "site": site,
             "sim": sim
             })
+        
+        env["csvViaHeaderOptions"] = sim["climate.csv-options"]
+        if soil_type == "poor_soil":
+            limit_rootdepth()
+        
+        weather_file_name = station + "-" + climate
+        if climate != "now" and climate != "naw":
+            weather_file_name += "-RCP85"
+        weather_file_name += "_" + str(realization).zfill(2) + ".csv"
 
-        monica_io.add_climate_data_to_env(env, sim)
-
-        env["events"] = out_stepA["output"][crop_id]
-
-        env["customId"] = current_sim.split(".")[0]
+        if LOCAL_RUN:
+            env["pathToClimateCSV"] = PATHS[USER]["LOCAL_ARCHIVE_PATH_TO_PROJECT"] + "weather/converted/no_snow_cover_assumed/" + weather_file_name
+        else:
+            env["pathToClimateCSV"] = PATHS[USER]["ARCHIVE_PATH_TO_PROJECT"] + "weather/converted/no_snow_cover_assumed/" + weather_file_name 
+        
+        env["customId"] = station + "|" + soil + "|" + rotation_id + "|" + climate + "|" + str(realization)
 
         socket.send_json(env)
-        print "sent env ", i, " customId: ", env["customId"]
-        i += 1
+        print "sent env ", counter, " customId: ", env["customId"]
+        return counter + 1
 
+    for station in stations:
+        for soil in soils:
+            for rotation_id in rotations:
+                for climate in climate_data:
+                    for realization in range(1, 11):
+                        counter = generate_and_send_env(station, soil, rotation_id, climate, realization, counter)
 
     stop_store = time.clock()
 
-    print "sending ", (i-1), " envs took ", (stop_store - start_store), " seconds"
+    print "sending ", (counter-1), " envs took ", (stop_store - start_store), " seconds"
     return
 
 

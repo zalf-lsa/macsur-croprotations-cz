@@ -31,8 +31,7 @@ import monica_io
 
 LOCAL_RUN = True
 
-def create_output(crop_id, location, result):
-    "create crop output lines"
+def create_output(custom_id, result):
 
     #conversion methods
     def convert_date(mydate):
@@ -48,11 +47,19 @@ def create_output(crop_id, location, result):
     def soilN_to_kgha(orgN_kg_m3, NO3_kg_m3, NH4_kg_m3, thickness_m):
         return (orgN_kg_m3 + NO3_kg_m3 + NH4_kg_m3) * thickness_m * 10000
 
+    def crop_id(crop):
+        return {
+            "barley/spring barley": "SG",
+            "maize/silage maize": "SM",
+            "rape/winter rape": "WRA",
+            "rape/cover": "WRC",
+            "wheat/winter wheat": "WW"
+        }[crop]
+
     out = []
-    #if crop_id == "SM":
     if len(result.get("data", [])) > 0 and len(result["data"][0].get("results", [])) > 0:
 
-        all_vals = defaultdict(dict)
+        year_to_vals = defaultdict(dict)
 
         for data in result.get("data", []):
             results = data.get("results", [])
@@ -64,54 +71,65 @@ def create_output(crop_id, location, result):
 
             assert len(oids) == len(results)
 
-            vals = {}
-            for iii in range(0, len(results)):
-                oid = oids[iii]
-                val = results[iii]
+            for kkk in range(0, len(results[0])):
+                vals = {}
 
-                name = oid["name"] if len(oid["displayName"]) == 0 else oid["displayName"]
+                for iii in range(0, len(oids)):
+                    oid = oids[iii]
+                    val = results[iii][kkk]
 
-                vals[name] = val
+                    name = oid["name"] if len(oid["displayName"]) == 0 else oid["displayName"]
 
-            all_vals.update(vals)
+                    if isinstance(val, types.ListType):
+                        for val_ in val:
+                            vals[name] = val_
+                    else:
+                        vals[name] = val
 
-    if len(all_vals) > 0:
+                if "Year" not in vals:
+                    print "Missing Year in result section. Skipping results section."
+                    continue
+
+                year_to_vals[vals.get("Year", 0)].update(vals)
         
-        out.append([
-            convert_date(all_vals.get("sowing")[0]),
-            all_vals.get("anthesis", "n.a.")[0],
-            all_vals.get("matur", "n.a.")[0],
-            convert_date(all_vals.get("harv")[0]),
-            crop_id,
-            all_vals.get("yield")[0],
-            all_vals.get("biomass")[0],
-            all_vals.get("roots")[0],
-            all_vals.get("LAImax")[0],
-            all_vals.get("Nfertil", "n.a.")[0],
-            all_vals.get("irrig")[0],
-            all_vals.get("N-uptake")[0],
-            all_vals.get("Nagb")[0],
-            all_vals.get("ETcG")[0],
-            all_vals.get("ETaG")[0],
-            all_vals.get("TraG")[0],
-            all_vals.get("PerG")[0][0],
-            SWC_to_mm(all_vals.get("SWCS1")[0], all_vals.get("Pwp1")[0], 0.3),
-            SWC_to_mm(all_vals.get("SWCS2")[0], all_vals.get("Pwp2")[0], 1.5),
-            SWC_to_mm(all_vals.get("SWCA1")[0], all_vals.get("Pwp1")[0], 0.3),
-            SWC_to_mm(all_vals.get("SWCA2")[0], all_vals.get("Pwp2")[0], 1.5),
-            SWC_to_mm(all_vals.get("SWCM1")[0], all_vals.get("Pwp1")[0], 0.3),
-            SWC_to_mm(all_vals.get("SWCM2")[0], all_vals.get("Pwp2")[0], 1.5),
-            soilN_to_kgha(all_vals.get("OrgN1_kgm3")[0], all_vals.get("NO31_kgm3")[0], all_vals.get("NH41_kgm3")[0], 0.3),
-            soilN_to_kgha(all_vals.get("OrgN2_kgm3")[0], all_vals.get("NO32_kgm3")[0], all_vals.get("NH42_kgm3")[0], 1.5),
-            soilN_to_kgha(0, all_vals.get("NO31_kgm3")[0], all_vals.get("NH41_kgm3")[0], 0.3),
-            soilN_to_kgha(0, all_vals.get("NO32_kgm3")[0], all_vals.get("NH42_kgm3")[0], 1.5),
-            all_vals.get("NleaG")[0],
-            all_vals.get("TRRel")[0],
-            all_vals.get("Reduk")[0],
-            all_vals.get("DryD1", "n.a.")[0],
-            all_vals.get("DryD2", "n.a.")[0],
-            all_vals.get("Nresid")[0],
-        ])
+        for year, vals in OrderedDict(sorted(year_to_vals.items())).iteritems():
+            if len(vals) > 0:
+        
+                out.append([
+                    convert_date(vals.get("sowing", "n.a.")),
+                    vals.get("anthesis", "n.a."),
+                    vals.get("matur", "n.a."),
+                    convert_date(vals.get("harv", "n.a.")),
+                    crop_id(vals.get("Crop", "n.a.")),
+                    vals.get("yield")[0],
+                    vals.get("biomass")[0],
+                    vals.get("roots")[0],
+                    vals.get("LAImax")[0],
+                    vals.get("Nfertil", "n.a.")[0],
+                    vals.get("irrig")[0],
+                    vals.get("N-uptake")[0],
+                    vals.get("Nagb")[0],
+                    vals.get("ETcG")[0],
+                    vals.get("ETaG")[0],
+                    vals.get("TraG")[0],
+                    vals.get("PerG")[0][0],
+                    SWC_to_mm(vals.get("SWCS1")[0], vals.get("Pwp1")[0], 0.3),
+                    SWC_to_mm(vals.get("SWCS2")[0], vals.get("Pwp2")[0], 1.5),
+                    SWC_to_mm(vals.get("SWCA1")[0], vals.get("Pwp1")[0], 0.3),
+                    SWC_to_mm(vals.get("SWCA2")[0], vals.get("Pwp2")[0], 1.5),
+                    SWC_to_mm(vals.get("SWCM1")[0], vals.get("Pwp1")[0], 0.3),
+                    SWC_to_mm(vals.get("SWCM2")[0], vals.get("Pwp2")[0], 1.5),
+                    soilN_to_kgha(vals.get("OrgN1_kgm3")[0], vals.get("NO31_kgm3")[0], vals.get("NH41_kgm3")[0], 0.3),
+                    soilN_to_kgha(vals.get("OrgN2_kgm3")[0], vals.get("NO32_kgm3")[0], vals.get("NH42_kgm3")[0], 1.5),
+                    soilN_to_kgha(0, vals.get("NO31_kgm3")[0], vals.get("NH41_kgm3")[0], 0.3),
+                    soilN_to_kgha(0, vals.get("NO32_kgm3")[0], vals.get("NH42_kgm3")[0], 1.5),
+                    vals.get("NleaG")[0],
+                    vals.get("TRRel")[0],
+                    vals.get("Reduk")[0],
+                    vals.get("DryD1", "n.a.")[0],
+                    vals.get("DryD2", "n.a.")[0],
+                    vals.get("Nresid")[0],
+                ])
 
     return out
 
@@ -212,15 +230,12 @@ def collector():
         elif not write_normal_output_files:
             print "received work result ", i, " customId: ", result.get("customId", "")
 
-            custom_id = result["customId"]
-            crop_id = custom_id.split("_")[0]
-            location = "C" + custom_id.split("_")[2]
-            harvest_year = custom_id.split("_")[-1:]
+            custom_id = result["customId"]         
 
-            res = create_output(crop_id, location, result)
-            data[(crop_id, location)].extend(res)
+            res = create_output(custom_id, result)
+            data["custom_id"].extend(res)
 
-            if len(data[(crop_id, location)]) >= start_writing_lines_threshold:
+            if len(data[(custom_id)]) >= start_writing_lines_threshold:
                 write_data(crop_id, location, data)
 
             i = i + 1

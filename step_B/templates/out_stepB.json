@@ -1,0 +1,68 @@
+{
+	"my_out": [
+		"crop", [
+			["Crop", "FIRST"],
+			["Year", "LAST"],
+			["Date|sowing", "FIRST"],
+			["Date|harv", "LAST"],
+			["Year", "LAST"],
+			["Yield|yield", "LAST"],
+			["AbBiom|biomass", "LAST"],
+			["OrgBiom|roots", "Root", "LAST"],
+			["LAI|LAImax", "MAX"],
+			["Irrig|irrig", "SUM"],
+			["SumNUp|N-uptake", "LAST"],				
+			["AbBiomN|Nagb", "LAST"],
+			["Pot_ET|ETcG", "SUM"],
+			["Act_ET|ETaG", "SUM"],
+			["Tra|TraG", "SUM"],
+			["PercolationRate|PerG", 15, "SUM"],
+			["Mois|SWCS1", [1, 3, "AVG"], "FIRST"],
+			["Pwp|Pwp1", [1, 3, "AVG"], "FIRST"],
+			["Mois|SWCM1", [1, 3, "AVG"], "LAST"],				
+			["Mois|SWCS2", [1, 15, "AVG"], "FIRST"],
+			["Pwp|Pwp2", [1, 15, "AVG"], "FIRST"],
+			["Mois|SWCM2", [1, 15, "AVG"], "LAST"],
+			["OrgN|OrgN1_kgm3", [1, 3, "AVG"], "LAST"],
+			["OrgN|OrgN2_kgm3", [1, 15, "AVG"], "LAST"],
+			["NO3|NO31_kgm3", [1, 3, "AVG"], "LAST"],
+			["NO3|NO32_kgm3", [1, 15, "AVG"], "LAST"],
+			["NH4|NH41_kgm3", [1, 3, "AVG"], "LAST"],
+			["NH4|NH42_kgm3", [1, 15, "AVG"], "LAST"],
+			["NLeach|NleaG", "SUM"],
+			["TraDef|TRRel", "AVG"],
+			["NDef|Reduk", "AVG"],
+			["Nresid", "LAST"],
+			["NFert|Nfertil", "SUM"]
+		],
+		
+
+		{"at": "anthesis"}, [
+			["Year"],
+			["DOY|anthesis"],
+			["Mois|SWCA1", [1, 3, "AVG"]],
+			["Mois|SWCA2", [1, 15, "AVG"]]
+		],
+
+		{"at": "maturity"}, [
+			["Year"],
+			["DOY|matur"]
+		],
+
+		{"from": "Sowing", 
+			"to": "anthesis",
+			"while": ["ETa/ETc", "<", 0.4]
+		}, [
+			["Year", "LAST"],
+			["Count|DryD1", "SUM"] 
+		],
+
+		{"from": "anthesis", 
+			"to": "Harvest",
+			"while": ["ETa/ETc", "<", 0.4]
+		}, [
+			["Year", "LAST"],
+			["Count|DryD2", "SUM"] 
+		]					
+	]
+}

@@ -144,9 +144,9 @@
 					"type": "AutomaticHarvest", 
 					"latest-date": "0001-09-05",
 					"min-%-asw": 0,
-					"max-%-asw": 100,
-					"max-3d-precip-sum": 2,
-					"max-curr-day-precip": 0.1,
+					"max-%-asw": 200,
+					"max-3d-precip-sum": 5000,
+					"max-curr-day-precip": 1000,
 					"harvest-time": "maturity"
 				},
 				{
@@ -371,9 +371,9 @@
 					"type": "AutomaticHarvest", 
 					"latest-date": "0001-09-05",
 					"min-%-asw": 0,
-					"max-%-asw": 99,
-					"max-3d-precip-sum": 2,
-					"max-curr-day-precip": 0.1,
+					"max-%-asw": 200,
+					"max-3d-precip-sum": 5000,
+					"max-curr-day-precip": 1000,
 					"harvest-time": "maturity"
 				},
 				{

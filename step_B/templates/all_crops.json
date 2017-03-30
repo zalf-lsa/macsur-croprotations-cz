@@ -288,7 +288,8 @@
 					"max-%-asw": 100,
 					"max-3d-precip-sum": 2,
 					"max-curr-day-precip": 0.1,
-					"harvest-time": "maturity"
+					"harvest-time": "maturity",
+					"exported": false
 				},
 				{ 
 					"type": "Tillage",
