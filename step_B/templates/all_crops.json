@@ -252,7 +252,7 @@
 					"after": "Harvest",
 					"amount": [40000, "kg"],
 					"parameters": ["ref", "fert-params", "manure"],
-					"incorporation": true					
+					"incorporation": false					
 				},
 				{ 
 					"type": "Tillage",
@@ -338,7 +338,7 @@
 					"after": "Harvest",
 					"amount": [40000, "kg"],
 					"parameters": ["ref", "fert-params", "manure"],
-					"incorporation": true
+					"incorporation": false
 				},
 				{ 
 					"type": "Tillage",

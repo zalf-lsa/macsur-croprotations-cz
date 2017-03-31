@@ -19,10 +19,8 @@
 			["PercolationRate|PerG", 15, "SUM"],
 			["Mois|SWCS1", [1, 3, "AVG"], "FIRST"],
 			["Pwp|Pwp1", [1, 3, "AVG"], "FIRST"],
-			["Mois|SWCM1", [1, 3, "AVG"], "LAST"],				
 			["Mois|SWCS2", [1, 15, "AVG"], "FIRST"],
 			["Pwp|Pwp2", [1, 15, "AVG"], "FIRST"],
-			["Mois|SWCM2", [1, 15, "AVG"], "LAST"],
 			["OrgN|OrgN1_kgm3", [1, 3, "AVG"], "LAST"],
 			["OrgN|OrgN2_kgm3", [1, 15, "AVG"], "LAST"],
 			["NO3|NO31_kgm3", [1, 3, "AVG"], "LAST"],
@@ -39,6 +37,7 @@
 
 		{"at": "anthesis"}, [
 			["Year"],
+			["Crop"],
 			["DOY|anthesis"],
 			["Mois|SWCA1", [1, 3, "AVG"]],
 			["Mois|SWCA2", [1, 15, "AVG"]]
@@ -46,23 +45,62 @@
 
 		{"at": "maturity"}, [
 			["Year"],
-			["DOY|matur"]
+			["Crop"],
+			["DOY|matur"],
+			["Mois|SWCM1", [1, 3, "AVG"]],
+			["Mois|SWCM2", [1, 15, "AVG"]]
 		],
 
-		{"from": "Sowing", 
-			"to": "anthesis",
+		{"from": "Sowing", "to": "Harvest",
 			"while": ["ETa/ETc", "<", 0.4]
 		}, [
 			["Year", "LAST"],
-			["Count|DryD1", "SUM"] 
+			["Crop", "FIRST"],
+			["Count|DryDcycle", "SUM"] 
 		],
 
-		{"from": "anthesis", 
-			"to": "Harvest",
+		{"from": "anthesis", "to": "Harvest",
 			"while": ["ETa/ETc", "<", 0.4]
 		}, [
 			["Year", "LAST"],
+			["Crop", "FIRST"],
 			["Count|DryD2", "SUM"] 
-		]					
+		],
+
+		{"from": "xxxx-10-01", "to": "xxxx-12-31"}, [
+			["Year", "LAST"],
+			["Pot_ET|ETcY1", "SUM"],
+			["Act_ET|ETaY1", "SUM"],
+			["Tra|TraY1", "SUM"],
+			["PercolationRate|PerY1", 15, "SUM"],
+			["Mois|SWC1Y1", [1, 3, "AVG"], "SUM"],
+			["Mois|SWC2Y1", [1, 15, "AVG"], "SUM"],
+			["Pwp|Pwp1", [1, 3, "AVG"], "FIRST"],
+			["Pwp|Pwp2", [1, 15, "AVG"], "FIRST"],
+			["Runoff|RunoffY1", "SUM"],
+			["NLeach|NleaY1", "SUM"],
+			["Nmin|NminY1", "SUM"],
+			["Denit|DenitY1", "SUM"],
+			["NH3|VolatY1", "SUM"]
+
+		],
+		{"from": "xxxx-01-01", "to": "xxxx-09-30"}, [
+			["Year", "LAST"],
+			["Pot_ET|ETcY2", "SUM"],
+			["Act_ET|ETaY2", "SUM"],
+			["Tra|TraY2", "SUM"],
+			["PercolationRate|PerY2", 15, "SUM"],
+			["Mois|SWC1Y2", [1, 3, "AVG"], "SUM"],
+			["Mois|SWC2Y2", [1, 15, "AVG"], "SUM"],
+			["Pwp|Pwp1", [1, 3, "AVG"], "FIRST"],
+			["Pwp|Pwp2", [1, 15, "AVG"], "FIRST"],
+			["Runoff|RunoffY2", "SUM"],
+			["NLeach|NleaY2", "SUM"],
+			["Nmin|NminY2", "SUM"],
+			["Denit|DenitY2", "SUM"],
+			["NH3|VolatY2", "SUM"],
+			["SOC-X-Y|SOC1_gm2", [1, 3, "SUM"], "LAST"],
+			["SOC-X-Y|SOC2_gm2", [1, 15, "SUM"], "LAST"]
+		]
 	]
 }
