@@ -27,7 +27,7 @@ import monica_io
 import rotate_script
 
 USER = "stella"
-LOCAL_RUN = True
+LOCAL_RUN = False
 
 PATHS = {
     "stella": {
@@ -169,7 +169,7 @@ def main():
         else:
             env["pathToClimateCSV"] = PATHS[USER]["ARCHIVE_PATH_TO_PROJECT"] + "weather/converted/no_snow_cover_assumed/" + weather_file_name 
         
-        env["customId"] = station + "|" + soil + "|" + rotation_id + "|" + climate + "|" + str(realization)
+        env["customId"] = station + "|" + soil + "|" + rotation_id + "|" + climate + "|" + str(realization).zfill(2)
 
         socket.send_json(env)
         print "sent env ", counter, " customId: ", env["customId"]
@@ -180,7 +180,8 @@ def main():
             for rotation_id in rotations:
                 for climate in climate_data:
                     for realization in range(1, 11):
-                        counter = generate_and_send_env(station, soil, rotation_id, climate, realization, counter)
+                        if station == "LED" and climate == "now" and realization == 6 and rotation_id == "02":
+                            counter = generate_and_send_env(station, soil, rotation_id, climate, realization, counter)
 
     stop_store = time.clock()
 

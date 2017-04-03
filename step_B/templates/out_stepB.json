@@ -77,9 +77,9 @@
 			["Mois|SWC2Y1", [1, 15, "AVG"], "SUM"],
 			["Pwp|Pwp1", [1, 3, "AVG"], "FIRST"],
 			["Pwp|Pwp2", [1, 15, "AVG"], "FIRST"],
-			["Runoff|RunoffY1", "SUM"],
+			["RunOff|RunoffY1", "SUM"],
 			["NLeach|NleaY1", "SUM"],
-			["Nmin|NminY1", "SUM"],
+			["NetNmin|NminY1", "SUM"],
 			["Denit|DenitY1", "SUM"],
 			["NH3|VolatY1", "SUM"]
 
@@ -94,9 +94,9 @@
 			["Mois|SWC2Y2", [1, 15, "AVG"], "SUM"],
 			["Pwp|Pwp1", [1, 3, "AVG"], "FIRST"],
 			["Pwp|Pwp2", [1, 15, "AVG"], "FIRST"],
-			["Runoff|RunoffY2", "SUM"],
+			["RunOff|RunoffY2", "SUM"],
 			["NLeach|NleaY2", "SUM"],
-			["Nmin|NminY2", "SUM"],
+			["NetNmin|NminY2", "SUM"],
 			["Denit|DenitY2", "SUM"],
 			["NH3|VolatY2", "SUM"],
 			["SOC-X-Y|SOC1_gm2", [1, 3, "SUM"], "LAST"],

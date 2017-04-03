@@ -31,7 +31,20 @@ import zmq
 
 import monica_io
 
-LOCAL_RUN = True
+USER = "stella"
+LOCAL_RUN = False
+
+PATHS = {
+    "stella": {
+        "LOCAL_ARCHIVE_PATH_TO_PROJECT": "Z:/projects/macsur-croprotations-cz/",
+    },
+    "berg": {
+        "LOCAL_ARCHIVE_PATH_TO_PROJECT": "P:/macsur-croprotations-cz/",
+    },
+    "berg2": {
+        "LOCAL_ARCHIVE_PATH_TO_PROJECT": "P:/macsur-croprotations-cz/",
+    }
+}
 
 def create_output(custom_id, result):
 
@@ -61,15 +74,15 @@ def create_output(custom_id, result):
             "wheat/winter wheat": "WW"
         }[crop]
 
-    def calc_DryD1(DryDcycle, DryD2):
-        if DryD2 != "n.a.":
+    def calc_DryD1(DryDcycle, DryD2, anthesis):        
+        if anthesis != "n.a.":
             return DryDcycle - DryD2
         else: #anthesis not reached
             return "n.a."
 
     def consolidate_DryD2(DryD2, matur):
-        if DryD2 == "n.a." or matur == "n.a.":
-            return "n.a." #anthesis or maturity not reached
+        if matur == "n.a.":
+            return "n.a." #maturity not reached
         else:
             return DryD2
     
@@ -175,8 +188,8 @@ def create_output(custom_id, result):
                 vals.get("NleaG"),
                 vals.get("TRRel"),
                 vals.get("Reduk"),
-                calc_DryD1(vals.get("DryDcycle"), vals.get("DryD2", "n.a.")),
-                consolidate_DryD2(vals.get("DryD2", "n.a."), vals.get("matur", "n.a.")),
+                calc_DryD1(vals.get("DryDcycle", 0), vals.get("DryD2", 0), vals.get("anthesis", "n.a.")),
+                consolidate_DryD2(vals.get("DryD2", 0), vals.get("matur", "n.a.")),
                 vals.get("Nresid"),
             ])
         
@@ -191,21 +204,25 @@ def create_output(custom_id, result):
 
             hydroyear_out.append([
                 year,
-                vals.get("ETaY1", 0) + vals.get("ETaY2"), #in 1961 Y1 is missing
+                vals.get("ETcY1", 0) + vals.get("ETcY2"), #in 1961 Y1 is missing: 0 as default
+                vals.get("ETaY1", 0) + vals.get("ETaY2"),
                 vals.get("TraY1", 0) + vals.get("TraY2"),
-                vals.get("PerY1", 0) + vals.get("PerY2"),
                 vals.get("PerY1", 0) + vals.get("PerY2"),
                 SWC_to_mm(SWC1Y_m3, vals.get("Pwp1"), 0.3),
                 SWC_to_mm(SWC2Y_m3, vals.get("Pwp2"), 1.5),
-                
-
-
+                "n.a.", #vals.get("RunoffY1", 0) + vals.get("RunoffY2"),
+                vals.get("NleaY1", 0) + vals.get("NleaY2"),
+                vals.get("NminY1", 0) + vals.get("NminY2"),
+                vals.get("DenitY1", 0) + vals.get("DenitY2"),
+                vals.get("VolatY1", 0) + vals.get("VolatY2"),
+                vals.get("SOC1_gm2") * 10,
+                vals.get("SOC2_gm2") * 10,
             ])
 
-    return crop_out
+    return crop_out, hydroyear_out
 
 
-HEADER = \
+HEADER_CROP = \
     "sowing," \
     "anthesis," \
     "matur," \
@@ -241,31 +258,47 @@ HEADER = \
     "Nresid," \
     "\n"
 
+HEADER_YEAR = \
+    "YEAR," \
+    "ETcY," \
+    "ETaY," \
+    "TraY," \
+    "PerY," \
+    "SWCY1," \
+    "SWCY2," \
+    "Runoff," \
+    "NleaY," \
+    "MINY," \
+    "DENY," \
+    "VOLAT," \
+    "SOC1," \
+    "SOC2," \
+    "\n"
 
-#overwrite_list = set()
-def write_data(crop_id, location, data):
+
+def write_data(custom_id, crp_res, yr_res):
     "write data"
+    
+    id_info = custom_id.split("|")
 
-    crops = {
-        "SB": "Barley",
-        "WW": "Wheat",
-        "SM": "Maize",
-        "WR": "Rape"
-    }
+    directory = PATHS[USER]["LOCAL_ARCHIVE_PATH_TO_PROJECT"] + "output/" + id_info[1]
 
-    current_dir = os.getcwd()
-    path_to_file = current_dir + "/step_A/out/" + crops[crop_id] + "/" + location + ".csv"
-
-    if not os.path.isfile(path_to_file):
-        with open(path_to_file, "w") as _:
-            _.write(HEADER)
-        
-    with open(path_to_file, 'ab') as _:
+    path_to_file_crop = directory + "/" + "C" + id_info[0] + "-" + id_info[3] + "_" + id_info[4] + "_" + id_info[2] + ".csv"
+    path_to_file_year = directory + "/" + "Y" + id_info[0] + "-" + id_info[3] + "_" + id_info[4] + "_" + id_info[2] + ".csv"
+    
+    with open(path_to_file_crop, 'ab') as _:
         writer = csv.writer(_, delimiter=",")
-        for row_ in data[(crop_id, location)]:
+        _.write(HEADER_CROP)
+        for row_ in crp_res:
             writer.writerow(row_)
-        data[(crop_id, location)] = []
 
+    with open(path_to_file_year, 'ab') as _:
+        writer = csv.writer(_, delimiter=",")
+        _.write(HEADER_YEAR)
+        for row_ in yr_res:
+            writer.writerow(row_)
+
+    
 
 def collector():
     "collect data from workers"
@@ -281,66 +314,26 @@ def collector():
         socket.connect("tcp://cluster2:7777")
     socket.RCVTIMEO = 1000
     leave = False
-    write_normal_output_files = False
-    start_writing_lines_threshold = 10
     
     while not leave:
 
         try:
             result = socket.recv_json(encoding="latin-1")
-        except:
-            for crop_id, location in data.keys():
-                if len(data[(crop_id, location)]) > 0:
-                    write_data(crop_id, location, data)
+        except:            
             continue
 
         if result["type"] == "finish":
             print "received finish message"
             leave = True
 
-        elif not write_normal_output_files:
-            print "received work result ", i, " customId: ", result.get("customId", "")
-
-            custom_id = result["customId"]         
-
-            res = create_output(custom_id, result)
-            data["custom_id"].extend(res)
-
-            if len(data[(custom_id)]) >= start_writing_lines_threshold:
-                write_data(crop_id, location, data)
-
-            i = i + 1
-
-        elif write_normal_output_files:
+        else:
             print "received work result ", i, " customId: ", result.get("customId", "")
 
             custom_id = result["customId"]
-            crop_id = custom_id.split("_")[0]
-            location = "C" + custom_id.split("_")[2]
-            harvest_year = custom_id.split("_")[-1:]
+
+            crp_res, yr_res = create_output(custom_id, result)
             
-
-            #with open("out/out-" + str(i) + ".csv", 'wb') as _:
-            with open("step_A/out/out-" + custom_id + ".csv", 'wb') as _:
-                writer = csv.writer(_, delimiter=",")
-
-                for data_ in result.get("data", []):
-                    results = data_.get("results", [])
-                    orig_spec = data_.get("origSpec", "")
-                    output_ids = data_.get("outputIds", [])
-
-                    if len(results) > 0:
-                        writer.writerow([orig_spec.replace("\"", "")])
-                        for row in monica_io.write_output_header_rows(output_ids,
-                                                                        include_header_row=True,
-                                                                        include_units_row=True,
-                                                                        include_time_agg=False):
-                            writer.writerow(row)
-
-                        for row in monica_io.write_output(output_ids, results):
-                            writer.writerow(row)
-
-                    writer.writerow([])
+            write_data(custom_id, crp_res, yr_res)
 
             i = i + 1
 

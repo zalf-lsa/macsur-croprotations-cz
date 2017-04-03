@@ -22,7 +22,7 @@ import sys
 import zmq
 #print "pyzmq version: ", zmq.pyzmq_version(), " zmq version: ", zmq.zmq_version()
 
-LOCAL_RUN = True
+LOCAL_RUN = False
 
 def main():
     "simply empty queue"
