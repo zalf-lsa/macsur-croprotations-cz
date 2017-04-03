@@ -100,7 +100,7 @@ def main():
         "now",
         "MRI-CGCM3",
         "IPSL-CM5A-MR",
-        "HADGEM2-ES",
+        "HadGEM2-ES",
         "CNRM-CM5",
         "BNU-ESM"
     ]
@@ -179,9 +179,9 @@ def main():
         for soil in soils:
             for rotation_id in rotations:
                 for climate in climate_data:
-                    for realization in range(1, 11):
-                        if station == "LED" and climate == "now" and realization == 6 and rotation_id == "02":
-                            counter = generate_and_send_env(station, soil, rotation_id, climate, realization, counter)
+                    for realization in range(1, 21):
+                        #if soil == "good_soil" and climate == "IPSL-CM5A-MR" and station == "VER" and rotation_id == "05" and realization == 1:
+                        counter = generate_and_send_env(station, soil, rotation_id, climate, realization, counter)
 
     stop_store = time.clock()
 

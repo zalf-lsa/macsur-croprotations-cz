@@ -7,7 +7,7 @@
 	},
 	"JulianDayAutomaticFertilising": 89,
 	"climate.csv": "LED-HadGEM2-ES-RCP85_01.csv",
-	"site.json": "site_test_producer.json",
+	"site.json": "site_test.json",
 	"climate.csv-options": {
 		"header-to-acd-names": {},
 		"csv-separator": ",",
@@ -39,7 +39,7 @@
 	},
 	"EmergenceMoistureControlOn": false,
 	"debug?": false,
-	"crop.json": "crop_test_producer.json",
+	"crop.json": "crop_test.json",
 	"WaterDeficitResponseOn": true,
 	"EmergenceFloodingControlOn": false,
 	"UseSecondaryYields": true,
@@ -56,14 +56,21 @@
 		},
 		"write-file?": true,
 		"events": [
-            
-            "daily", [
+			"daily", [
 				"Date", "Crop", "RelDev", "Stage", "AbBiom", "Yield","LAI", "TraDef", "NDef",
 				"NFert", "PotNup", "ActNup", "NetNmin"
 			],
-
+			
 			"crop",
 			[
+				[
+					"Crop",
+					"FIRST"
+				],
+				[
+					"Year",
+					"LAST"
+				],
 				[
 					"Date|sowing",
 					"FIRST"
@@ -141,15 +148,6 @@
 					"FIRST"
 				],
 				[
-					"Mois|SWCM1",
-					[
-						1,
-						3,
-						"AVG"
-					],
-					"LAST"
-				],
-				[
 					"Mois|SWCS2",
 					[
 						1,
@@ -166,15 +164,6 @@
 						"AVG"
 					],
 					"FIRST"
-				],
-				[
-					"Mois|SWCM2",
-					[
-						1,
-						15,
-						"AVG"
-					],
-					"LAST"
 				],
 				[
 					"OrgN|OrgN1_kgm3",
@@ -245,10 +234,7 @@
 				[
 					"Nresid",
 					"LAST"
-				]
-			],
-			"run",
-			[
+				],
 				[
 					"NFert|Nfertil",
 					"SUM"
@@ -258,6 +244,12 @@
 				"at": "anthesis"
 			},
 			[
+				[
+					"Year"
+				],
+				[
+					"Crop"
+				],
 				[
 					"DOY|anthesis"
 				],
@@ -283,11 +275,33 @@
 			},
 			[
 				[
+					"Year"
+				],
+				[
+					"Crop"
+				],
+				[
 					"DOY|matur"
+				],
+				[
+					"Mois|SWCM1",
+					[
+						1,
+						3,
+						"AVG"
+					]
+				],
+				[
+					"Mois|SWCM2",
+					[
+						1,
+						15,
+						"AVG"
+					]
 				]
 			],
 			{
-				"to": "anthesis",
+				"to": "Harvest",
 				"while": [
 					"ETa/ETc",
 					"<",
@@ -297,7 +311,15 @@
 			},
 			[
 				[
-					"Count|DryD1",
+					"Year",
+					"LAST"
+				],
+				[
+					"Crop",
+					"FIRST"
+				],
+				[
+					"Count|DryDcycle",
 					"SUM"
 				]
 			],
@@ -312,8 +334,200 @@
 			},
 			[
 				[
+					"Year",
+					"LAST"
+				],
+				[
+					"Crop",
+					"FIRST"
+				],
+				[
 					"Count|DryD2",
 					"SUM"
+				]
+			],
+			{
+				"to": "xxxx-12-31",
+				"from": "xxxx-10-01"
+			},
+			[
+				[
+					"Year",
+					"LAST"
+				],
+				[
+					"Pot_ET|ETcY1",
+					"SUM"
+				],
+				[
+					"Act_ET|ETaY1",
+					"SUM"
+				],
+				[
+					"Tra|TraY1",
+					"SUM"
+				],
+				[
+					"PercolationRate|PerY1",
+					15,
+					"SUM"
+				],
+				[
+					"Mois|SWC1Y1",
+					[
+						1,
+						3,
+						"AVG"
+					],
+					"SUM"
+				],
+				[
+					"Mois|SWC2Y1",
+					[
+						1,
+						15,
+						"AVG"
+					],
+					"SUM"
+				],
+				[
+					"Pwp|Pwp1",
+					[
+						1,
+						3,
+						"AVG"
+					],
+					"FIRST"
+				],
+				[
+					"Pwp|Pwp2",
+					[
+						1,
+						15,
+						"AVG"
+					],
+					"FIRST"
+				],
+				[
+					"RunOff|RunoffY1",
+					"SUM"
+				],
+				[
+					"NLeach|NleaY1",
+					"SUM"
+				],
+				[
+					"NetNmin|NminY1",
+					"SUM"
+				],
+				[
+					"Denit|DenitY1",
+					"SUM"
+				],
+				[
+					"NH3|VolatY1",
+					"SUM"
+				]
+			],
+			{
+				"to": "xxxx-09-30",
+				"from": "xxxx-01-01"
+			},
+			[
+				[
+					"Year",
+					"LAST"
+				],
+				[
+					"Pot_ET|ETcY2",
+					"SUM"
+				],
+				[
+					"Act_ET|ETaY2",
+					"SUM"
+				],
+				[
+					"Tra|TraY2",
+					"SUM"
+				],
+				[
+					"PercolationRate|PerY2",
+					15,
+					"SUM"
+				],
+				[
+					"Mois|SWC1Y2",
+					[
+						1,
+						3,
+						"AVG"
+					],
+					"SUM"
+				],
+				[
+					"Mois|SWC2Y2",
+					[
+						1,
+						15,
+						"AVG"
+					],
+					"SUM"
+				],
+				[
+					"Pwp|Pwp1",
+					[
+						1,
+						3,
+						"AVG"
+					],
+					"FIRST"
+				],
+				[
+					"Pwp|Pwp2",
+					[
+						1,
+						15,
+						"AVG"
+					],
+					"FIRST"
+				],
+				[
+					"RunOff|RunoffY2",
+					"SUM"
+				],
+				[
+					"NLeach|NleaY2",
+					"SUM"
+				],
+				[
+					"NetNmin|NminY2",
+					"SUM"
+				],
+				[
+					"Denit|DenitY2",
+					"SUM"
+				],
+				[
+					"NH3|VolatY2",
+					"SUM"
+				],
+				[
+					"SOC-X-Y|SOC1_gm2",
+					[
+						1,
+						3,
+						"SUM"
+					],
+					"LAST"
+				],
+				[
+					"SOC-X-Y|SOC2_gm2",
+					[
+						1,
+						15,
+						"SUM"
+					],
+					"LAST"
 				]
 			]
 		],

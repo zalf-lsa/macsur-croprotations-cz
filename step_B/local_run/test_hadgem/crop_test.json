@@ -1,0 +1,10358 @@
+{
+	"__user defined crops section to be used via references": "",
+	"_include-file-base-path": "../",
+	"crops": {
+		"WRC": {
+			"is-winter-crop": true,
+			"residueParams": [
+				"include-from-file",
+				"monica-parameters/crop-residues/rape.json"
+			],
+			"cropParams": {
+				"cultivar": {
+					"CultivarName": "cover",
+					"=": [
+						"include-from-file",
+						"monica-parameters/crops/rape/winter rape_CZ.json"
+					]
+				},
+				"species": [
+					"include-from-file",
+					"monica-parameters/crops/rape_CZ.json"
+				]
+			}
+		},
+		"WW_1": {
+			"is-winter-crop": true,
+			"residueParams": [
+				"include-from-file",
+				"monica-parameters/crop-residues/wheat.json"
+			],
+			"cropParams": {
+				"cultivar": {
+					"=": [
+						"include-from-file",
+						"monica-parameters/crops/wheat/winter wheat_CZ.json"
+					],
+					"OrganIdsForSecondaryYield": [
+						{
+							"type": "YieldComponent",
+							"organId": 2,
+							"yieldPercentage": 0.8,
+							"yieldDryMatter": 0.86
+						},
+						{
+							"type": "YieldComponent",
+							"organId": 3,
+							"yieldPercentage": 0.8,
+							"yieldDryMatter": 0.86
+						}
+					]
+				},
+				"species": [
+					"include-from-file",
+					"monica-parameters/crops/wheat_CZ.json"
+				]
+			}
+		},
+		"WW": {
+			"is-winter-crop": true,
+			"residueParams": [
+				"include-from-file",
+				"monica-parameters/crop-residues/wheat.json"
+			],
+			"cropParams": {
+				"cultivar": {
+					"=": [
+						"include-from-file",
+						"monica-parameters/crops/wheat/winter wheat_CZ.json"
+					],
+					"OrganIdsForSecondaryYield": [
+						{
+							"type": "YieldComponent",
+							"organId": 2,
+							"yieldPercentage": 0,
+							"yieldDryMatter": 0.86
+						},
+						{
+							"type": "YieldComponent",
+							"organId": 3,
+							"yieldPercentage": 0,
+							"yieldDryMatter": 0.86
+						}
+					]
+				},
+				"species": [
+					"include-from-file",
+					"monica-parameters/crops/wheat_CZ.json"
+				]
+			}
+		},
+		"WR": {
+			"is-winter-crop": true,
+			"residueParams": [
+				"include-from-file",
+				"monica-parameters/crop-residues/rape.json"
+			],
+			"cropParams": {
+				"cultivar": [
+					"include-from-file",
+					"monica-parameters/crops/rape/winter rape_CZ.json"
+				],
+				"species": [
+					"include-from-file",
+					"monica-parameters/crops/rape_CZ.json"
+				]
+			}
+		},
+		"SM": {
+			"is-winter-crop": false,
+			"residueParams": [
+				"include-from-file",
+				"monica-parameters/crop-residues/maize.json"
+			],
+			"cropParams": {
+				"cultivar": [
+					"include-from-file",
+					"monica-parameters/crops/maize/silage maize_CZ.json"
+				],
+				"species": [
+					"include-from-file",
+					"monica-parameters/crops/maize_CZ.json"
+				]
+			}
+		},
+		"SB": {
+			"is-winter-crop": false,
+			"residueParams": [
+				"include-from-file",
+				"monica-parameters/crop-residues/barley.json"
+			],
+			"cropParams": {
+				"cultivar": {
+					"=": [
+						"include-from-file",
+						"monica-parameters/crops/barley/spring barley_CZ.json"
+					],
+					"OrganIdsForSecondaryYield": [
+						{
+							"type": "YieldComponent",
+							"organId": 2,
+							"yieldPercentage": 0,
+							"yieldDryMatter": 0.86
+						},
+						{
+							"type": "YieldComponent",
+							"organId": 3,
+							"yieldPercentage": 0,
+							"yieldDryMatter": 0.86
+						}
+					]
+				},
+				"species": [
+					"include-from-file",
+					"monica-parameters/crops/barley_CZ.json"
+				]
+			}
+		},
+		"SB_1": {
+			"is-winter-crop": false,
+			"residueParams": [
+				"include-from-file",
+				"monica-parameters/crop-residues/barley.json"
+			],
+			"cropParams": {
+				"cultivar": {
+					"=": [
+						"include-from-file",
+						"monica-parameters/crops/barley/spring barley_CZ.json"
+					],
+					"OrganIdsForSecondaryYield": [
+						{
+							"type": "YieldComponent",
+							"organId": 2,
+							"yieldPercentage": 0.8,
+							"yieldDryMatter": 0.86
+						},
+						{
+							"type": "YieldComponent",
+							"organId": 3,
+							"yieldPercentage": 0.8,
+							"yieldDryMatter": 0.86
+						}
+					]
+				},
+				"species": [
+					"include-from-file",
+					"monica-parameters/crops/barley_CZ.json"
+				]
+			}
+		}
+	},
+	"__UNDERSCORES IN FRONT MEANS IGNORE THE KEY, this is just to keep a valid JSON file": "",
+	"__user defined fertilizer parameteres section to be used via references": "",
+	"cropRotation": [
+		{
+			"worksteps": [
+				{
+					"date": "1961-01-01",
+					"var": [
+						"NH4",
+						[
+							1,
+							4
+						]
+					],
+					"type": "SetValue",
+					"value": 0.01
+				},
+				{
+					"date": "1961-01-01",
+					"var": [
+						"NH4",
+						[
+							1,
+							4
+						]
+					],
+					"type": "SetValue",
+					"value": 0.0036
+				},
+				{
+					"date": "1961-01-01",
+					"var": [
+						"Mois",
+						[
+							1,
+							10
+						]
+					],
+					"type": "SetValue",
+					"value": [
+						"=",
+						[
+							"Fc",
+							[
+								1,
+								10
+							]
+						]
+					]
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1961-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1961-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1962-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1962-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1962-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1963-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1963-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB"
+					],
+					"base-temp": 0,
+					"latest-date": "1963-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1963-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1963-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1963-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1964-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "1964-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "1964-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1964-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1964-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1964-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1965-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1965-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "1965-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "1966-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1966-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1966-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1966-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1967-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1967-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1967-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1968-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1968-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB"
+					],
+					"base-temp": 0,
+					"latest-date": "1968-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1968-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1968-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1968-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1969-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "1969-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "1969-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1969-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1969-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1969-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1970-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1970-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "1970-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "1971-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1971-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1971-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1971-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1972-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1972-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1972-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1973-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1973-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB"
+					],
+					"base-temp": 0,
+					"latest-date": "1973-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1973-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1973-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1973-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1974-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "1974-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "1974-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1974-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1974-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1974-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1975-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1975-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "1975-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "1976-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1976-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1976-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1976-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1977-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1977-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1977-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1978-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1978-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB"
+					],
+					"base-temp": 0,
+					"latest-date": "1978-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1978-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1978-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1978-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1979-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "1979-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "1979-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1979-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1979-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1979-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1980-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1980-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "1980-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "1981-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1981-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1981-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1981-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1982-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1982-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1982-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1983-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1983-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB"
+					],
+					"base-temp": 0,
+					"latest-date": "1983-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1983-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1983-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1983-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1984-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "1984-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "1984-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1984-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1984-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1984-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1985-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1985-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "1985-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "1986-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1986-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1986-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1986-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1987-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1987-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1987-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1988-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1988-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB"
+					],
+					"base-temp": 0,
+					"latest-date": "1988-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1988-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"can-be-skipped": true,
+			"is-cover-crop": true,
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1988-08-06",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WRC"
+					],
+					"base-temp": 0,
+					"latest-date": "1988-08-19",
+					"days-in-temp-window": 10,
+					"max-%-asw": 97,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"exported": false,
+					"latest-date": "1989-02-10",
+					"max-%-asw": 100,
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "1989-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "1989-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1989-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1989-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW"
+					],
+					"base-temp": 0,
+					"latest-date": "1989-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1990-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"parameters": [
+						"ref",
+						"fert-params",
+						"manure"
+					],
+					"after": "Harvest",
+					"days": 1,
+					"amount": [
+						40000,
+						"kg"
+					],
+					"incorporation": false,
+					"type": "OrganicFertilization"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1990-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "1990-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "1991-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1991-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1991-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "1991-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1992-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1993-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "1993-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1993-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "1994-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "1994-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1994-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1994-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "1994-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1995-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1995-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "1995-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "1996-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1996-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1996-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "1996-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1997-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1998-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "1998-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1998-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "1999-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "1999-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "1999-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "1999-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "1999-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2000-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2000-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2000-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2001-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2001-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2001-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2001-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2002-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2003-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2003-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2003-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2004-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2004-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2004-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2004-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2004-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2005-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2005-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2005-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2006-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2006-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2006-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2006-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2007-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2008-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2008-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2008-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2009-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2009-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2009-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2009-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2009-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2010-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2010-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2010-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2011-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2011-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2011-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2011-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2012-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2013-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2013-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2013-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2014-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2014-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2014-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2014-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2014-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2015-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2015-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2015-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2016-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2016-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2016-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2016-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2017-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2018-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2018-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2018-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2019-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2019-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2019-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2019-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2019-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2020-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2020-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2020-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2021-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2021-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2021-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2021-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2022-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2023-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2023-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2023-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2024-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2024-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2024-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2024-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2024-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2025-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2025-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2025-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2026-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2026-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2026-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2026-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2027-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2028-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2028-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2028-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2029-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2029-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2029-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2029-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2029-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2030-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2030-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2030-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2031-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2031-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2031-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2031-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2032-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2033-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2033-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2033-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2034-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2034-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2034-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2034-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2034-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2035-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2035-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2035-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2036-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2036-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2036-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2036-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2037-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2038-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2038-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2038-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2039-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2039-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2039-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2039-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2039-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2040-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2040-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2040-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2041-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2041-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2041-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2041-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2042-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2043-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2043-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2043-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2044-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2044-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2044-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2044-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2044-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2045-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2045-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2045-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2046-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2046-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2046-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2046-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2047-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2048-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2048-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2048-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2049-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2049-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2049-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2049-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2049-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2050-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2050-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2050-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2051-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2051-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2051-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2051-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2052-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2053-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2053-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2053-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2054-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2054-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2054-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2054-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2054-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2055-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2055-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2055-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2056-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2056-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2056-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2056-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2057-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2058-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2058-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2058-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2059-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2059-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2059-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2059-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2059-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2060-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2060-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2060-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2061-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2061-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2061-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2061-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2062-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2063-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2063-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2063-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2064-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2064-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2064-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2064-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2064-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2065-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2065-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2065-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2066-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2066-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2066-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2066-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2067-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2068-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2068-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2068-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2069-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2069-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2069-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2069-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2069-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2070-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2070-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2070-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2071-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2071-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2071-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2071-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2072-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2073-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2073-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2073-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2074-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2074-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2074-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2074-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2074-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2075-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2075-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2075-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2076-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2076-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2076-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2076-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2077-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2078-02-11",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 80,
+					"crop": [
+						"ref",
+						"crops",
+						"SB_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2078-05-01",
+					"days-in-temp-window": 5,
+					"max-%-asw": 95,
+					"min-temp": 7,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						90,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2078-09-07",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 5,
+					"earliest-date": "2079-04-05",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 380,
+					"crop": [
+						"ref",
+						"crops",
+						"SM"
+					],
+					"base-temp": 0,
+					"latest-date": "2079-05-10",
+					"days-in-temp-window": 5,
+					"max-%-asw": 97,
+					"min-temp": 8,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.5
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						100,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 5,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.5,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2079-09-15",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2079-10-01",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WW_1"
+					],
+					"base-temp": 0,
+					"latest-date": "2079-11-10",
+					"days-in-temp-window": 14,
+					"max-%-asw": 100,
+					"min-temp": 18.5,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 4
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2080-09-05",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		},
+		{
+			"worksteps": [
+				{
+					"max-3d-precip-sum": 2,
+					"earliest-date": "2080-08-26",
+					"min-%-asw": 0,
+					"temp-sum-above-base-temp": 0,
+					"crop": [
+						"ref",
+						"crops",
+						"WR"
+					],
+					"base-temp": 0,
+					"latest-date": "2080-09-10",
+					"days-in-temp-window": 10,
+					"max-%-asw": 98,
+					"min-temp": 22,
+					"type": "AutomaticSowing",
+					"max-curr-day-precip": 0.1
+				},
+				{
+					"N-demand": [
+						40,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.3,
+						"m"
+					],
+					"stage": 1
+				},
+				{
+					"date": "2081-03-01",
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					]
+				},
+				{
+					"N-demand": [
+						70,
+						"kg"
+					],
+					"partition": [
+						"ref",
+						"fert-params",
+						"urea"
+					],
+					"type": "NDemandFertilization",
+					"depth": [
+						0.9,
+						"m"
+					],
+					"stage": 3
+				},
+				{
+					"max-3d-precip-sum": 2,
+					"min-%-asw": 0,
+					"max-curr-day-precip": 0.1,
+					"harvest-time": "maturity",
+					"max-%-asw": 99,
+					"latest-date": "2081-08-22",
+					"type": "AutomaticHarvest"
+				},
+				{
+					"depth": 0.2,
+					"after": "Harvest",
+					"type": "Tillage",
+					"days": 3
+				}
+			]
+		}
+	],
+	"__this is the path which is prepended to 'include-from-file' paths, if they are relative paths": "",
+	"__!!! check and beautify JSON files with http://codebeautify.org/jsonviewer !!!": "",
+	"CropParameters": {
+		"DEFAULT": [
+			"include-from-file",
+			"monica-parameters/user-parameters/hermes-crop.json"
+		],
+		"AdjustRootDepthForSoilProps": false
+	},
+	"fert-params": {
+		"manure": {
+			"PartAOM_to_AOM_Fast": 0.2,
+			"AOM_NH4Content": 0.003,
+			"NConcentration": 0.017,
+			"DEFAULT": [
+				"include-from-file",
+				"monica-parameters/organic-fertilisers/CAM.json"
+			],
+			"CN_Ratio_AOM_Fast": 0,
+			"AOM_DryMatterContent": 0.3,
+			"PartAOM_to_AOM_Slow": 0.8
+		},
+		"urea": [
+			"include-from-file",
+			"monica-parameters/mineral-fertilisers/U.json"
+		]
+	}
+}

@@ -1,3 +1,0 @@
-cd C:\Users\stella\Documents\GitHub\monica
-
-project-files\Win32\Release\monica-run -o C:\Users\stella\Documents\GitHub\macsur-croprotations-cz\step_B\local_run\test_producer\out_test_local.csv C:\Users\stella\Documents\GitHub\macsur-croprotations-cz\step_B\local_run\test_producer\sim_test_producer.json
